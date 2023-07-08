@@ -11,6 +11,9 @@ use App\Http\Controllers\CurrentProjectController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\FileController;
 use  App\Http\Controllers\CirtificationController;
+use App\Http\Controllers\DemoProjectControler;
+
+Route::resource('demos', DemoProjectControler::class);
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/runningProject-home/{id}',[HomeController::class,'runningProject'])->name('runningProject');
@@ -90,4 +93,5 @@ Route::middleware([
  Route::resource('Files',\App\Http\Controllers\FileController::class);
  Route::resource('cirtifications', \App\Http\Controllers\CirtificationController::class);
  Route::resource('assesments',\App\Http\Controllers\AssesmentController::class);
+
 });
